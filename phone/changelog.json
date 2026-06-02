@@ -1,0 +1,8 @@
+{
+    "version": 100,
+    "buildNumber": 2,
+    "updateInfo": "1. 调整首页分类UI布局\n2. 新增帮助/反馈界面，点击首页左上角客服按钮进入\n3. 优化搜索逻辑，支持搜索提示和分集搜索\n4.修复部分荣耀平板无法横屏问题\n5.修复若干BUG",
+    "androidUrl": "",
+    "iosUrl": "",
+    "forceUpdate": true
+}
