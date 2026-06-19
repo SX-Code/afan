@@ -5,8 +5,8 @@
         "version": "1.0.1",
         "buildNumber": 2,
         "updateInfo": "1. 新增投屏功能，支持投屏进度控制、投屏跳过片头片尾、投屏播放暂停等\n2. 新增弹幕设置，支持设置显示区域、字体大小、不透明度、画面防挡等\n3. 修复部分UI样式问题\n4.修复若干BUG问题",
-        "androidUrl": "",
-        "iosUrl": "",
+        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.1/afan-arm64-v8a-v1.0.1.apk",
+        "iosUrl": "https://github.com/SX-Code/afan",
         "forceUpdate": true
     }
 }
