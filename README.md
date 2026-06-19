@@ -10,6 +10,7 @@
 - MacOS（待支持）
 - Windows（待支持）
 - Linux（待支持）
+- HarmonyOS（待支持）
 
 ## 屏幕截图
 
@@ -41,7 +42,8 @@
 - [✓] 番剧收藏
 - [✓] 浏览历史
 - [✓] 消息通知
-- [✗] 番剧专题
+- [✓] 番剧专题
+- [✓] 投屏功能
 - [✗] 敬请期待
 
 ## 下载
@@ -72,3 +74,6 @@
 - 感谢 [canvas_danmaku](https://github.com/Predidit/canvas_danmaku) 提供流畅的弹幕渲染支持。
 - 感谢 [cached_network_image](https://github.com/Baseflow/flutter_cached_network_image) 提供高效的图片缓存与加载支持。
 - 感谢 [Anime4K](https://github.com/bloc97/Anime4K) 与 [mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit) 两个优秀开源项目，为本软件提供了视频超分能力支持，使影视播放画质与体验得以大幅提升。
+
+
+https://pan.baidu.com/s/1DUFoHDDrF7loEXbsklijbw?pwd=ui7w
