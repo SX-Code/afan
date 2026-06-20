@@ -6,11 +6,11 @@
 ## 支持平台
 
 - Android
-- iOS（需要自签名）
+- iOS（自签名）
+- HarmonyOS（侧载安装）
 - MacOS（待支持）
 - Windows（待支持）
 - Linux（待支持）
-- HarmonyOS（待支持）
 
 ## 屏幕截图
 
