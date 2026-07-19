@@ -8,24 +8,36 @@
 - Android
 - iOS（自签名）
 - HarmonyOS（侧载安装）
-- MacOS（待支持）
-- Windows（待支持）
-- Linux（待支持）
+- MacOS
+- Windows
+- Linux
+- TV（待支持）
 
 ## 屏幕截图
 
+### 手机端UI鉴赏
+
 <table border="1" cellpadding="8" cellspacing="0" width="100%">
   <tr>
-    <td><img src="./document/home.png" /></td>
-    <td><img src="./document/explore.png" /></td>
-    <td><img src="./document/search.png" /></td>
+    <td><img src="./document/android/home.png" /></td>
+    <td><img src="./document/android/explore.png" /></td>
+    <td><img src="./document/android/search.png" /></td>
   </tr>
   <tr>
-    <td><img src="./document/play.png" /></td>
-    <td><img src="./document/history.png" /></td>
-    <td><img src="./document/profile.png" /></td>
+    <td><img src="./document/android/play.png" /></td>
+    <td><img src="./document/android/history.png" /></td>
+    <td><img src="./document/android/profile.png" /></td>
   </tr>
 </table>
+
+
+### 电脑端UI鉴赏
+<img src="./document/desktop/home_recommend.png" />
+<img src="./document/desktop/player.png" />
+<img src="./document/desktop/follow.png" />
+<img src="./document/desktop/topic.png" />
+<img src="./document/desktop/search.png" />
+<img src="./document/desktop/setting.png" />
 
 
 ## 功能/开发计划
@@ -44,6 +56,7 @@
 - [✓] 消息通知
 - [✓] 番剧专题
 - [✓] 投屏功能
+- [✓] 缓存功能
 - [✗] 敬请期待
 
 ## 下载

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 3,
+  "appId": "com.swx.afan",
+  "channel": "stable",
+  "releases": [
+    {
+      "version": "1.0.2",
+      "buildNumber": "3",
+      "platform": "windows",
+      "architecture": "x86_64",
+      "releaseNotes": "Bug fixes",
+      "releasedAt": "2026-07-03T10:00:00Z",
+      "policy": {
+        "level": "recommended",
+        "minSupportedVersion": "1.0.2"
+      },
+      "actions": [
+        {
+          "type": "openInstaller",
+          "installerUrl": "https://example.com/app.apk",
+          "installerType": "exe",
+          "installerSizeBytes": 25600000,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    }
+  ]
+}
