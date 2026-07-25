@@ -2,11 +2,11 @@
     "code": "00000",
     "msg": "success",
     "data": {
-        "version": "1.0.1",
-        "buildNumber": 2,
-        "updateInfo": "1. 新增投屏功能，支持投屏进度控制、投屏跳过片头片尾、投屏播放暂停等\n2. 新增弹幕设置，支持设置显示区域、字体大小、不透明度、画面防挡等\n3. 修复部分UI样式问题\n4.修复若干BUG问题",
-        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.1/afan-arm64-v8a-v1.0.1.apk",
-        "iosUrl": "https://github.com/SX-Code/afan",
+        "version": "1.0.2",
+        "buildNumber": 3,
+        "updateInfo": "1. 桌面版发布！\n2. 新增视频缓存\n3. 新增扫码登录、扫码观看\n4. 优化部分UI样式问题\n5. 修复若干BUG问题",
+        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.2/afan-android-arm64-v8a-v1.0.2.apk",
+        "iosUrl": "https://github.com/sx-code/afan",
         "forceUpdate": true
     }
 }
