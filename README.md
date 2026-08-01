@@ -60,7 +60,8 @@
 - [✗] 敬请期待
 
 ## 下载
-通过本页面右侧[release](https://github.com/SX-Code/afan/releases)下载
+-  [Gitee | Releases](https://gitee.com/SX-Code/afan/releases)
+-  [Github | Releases](https://github.com/SX-Code/afan/releases)
 
 
 ## 声明
