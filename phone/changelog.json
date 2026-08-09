@@ -3,7 +3,7 @@
     "msg": "success",
     "data": {
         "version": "1.0.3",
-        "buildNumber": 4,
+        "buildNumber": 4000,
         "updateInfo": "1.新增自定义采集源功能\n2.优化软件内存占用\n3.修复部分样式错误\n4.修复若干BUG",
         "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.3/afan-android-arm64-v8a-v1.0.3.apk",
         "iosUrl": "https://github.com/sx-code/afan",
