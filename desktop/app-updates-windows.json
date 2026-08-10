@@ -4,12 +4,11 @@
   "channel": "stable",
   "releases": [
     {
-      "version": "1.0.2",
-      "buildNumber": "3",
+      "version": "1.0.3",
+      "buildNumber": "4",
       "platform": "windows",
-      "architecture": "x86_64",
-      "releaseNotes": "Bug fixes",
-      "releasedAt": "2026-07-03T10:00:00Z",
+      "releaseNotes": "1.新增自定义采集源功能\n2.优化软件内存占用\n3.修复部分样式错误\n4.修复若干BUG",
+      "releasedAt": "2026-08-09T10:00:00Z",
       "policy": {
         "level": "recommended",
         "minSupportedVersion": "1.0.2"
@@ -17,10 +16,10 @@
       "actions": [
         {
           "type": "openInstaller",
-          "installerUrl": "https://example.com/app.apk",
+          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.3/afan-windows-v1.0.3-installer.exe",
           "installerType": "exe",
-          "installerSizeBytes": 25600000,
-          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          "installerSizeBytes": 37586861,
+          "sha256": "9cc808419b96e6e595b97d57b15c8a3e992448dbb5c1f69239269b6d16eecb7b"
         }
       ]
     }
