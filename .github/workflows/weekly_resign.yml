@@ -28,7 +28,7 @@ jobs:
           # 配置提交作者（仅用于commit显示，不控制推送权限）
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add update_envelope.json
+          git add .
           if ! git diff --cached --quiet; then
             git commit -m "Auto weekly resign: refresh signature timestamp"
             git push
