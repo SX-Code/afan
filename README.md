@@ -57,12 +57,45 @@
 - [✓] 番剧专题
 - [✓] 投屏功能
 - [✓] 缓存功能
+- [✓] 自定义播放源
 - [✗] 敬请期待
 
 ## 下载
 -  [Gitee | Releases](https://gitee.com/SX-Code/afan/releases)
 -  [Github | Releases](https://github.com/SX-Code/afan/releases)
 
+## 播放源
+
+软件可自定义播放源，播放源为通用的资源采集站采集接口，要求其返回数据类型为JSON，格式如下：
+```json
+{
+  "code": 1,
+  "msg": "数据列表",
+  "page": 1,
+  "pagecount": 5,
+  "limit": 20,
+  "total": 96,
+  "list": [
+    {
+      "vod_id": 132241,
+      "vod_name": "采集资源",
+      "type_id": 40,
+      "type_name": "国产动漫",
+      "vod_en": "caijiziyuan",
+      "vod_time": "2026-02-11 23:42:16",
+      "vod_remarks": "完结",
+      "vod_play_from": "bfzym3u8"
+    }
+  ],
+  "class": [
+    {
+      "type_id": 40,
+      "type_pid": 39,
+      "type_name": "国产动漫"
+    }
+  ]
+}
+```
 
 ## 声明
 
@@ -74,7 +107,9 @@
 
 4、使用者在下载、观看、传播相关内容时，请自行遵守当地法律法规，由此产生的任何法律责任由使用者自行承担，与本项目及开发者无关。
 
-5、本项目仅提供资源阅览与播放演示，不提供存储、上传、分发服务。
+5、本项目仅提供资源阅览，不提供存储、上传、分发服务。
+
+6、用户使用自定义播放源产生的影响及后果，与项目及开发者无关。
 
 ## 隐私政策
 
@@ -89,3 +124,9 @@
 - 感谢 [canvas_danmaku](https://github.com/Predidit/canvas_danmaku) 提供流畅的弹幕渲染支持。
 - 感谢 [cached_network_image](https://github.com/Baseflow/flutter_cached_network_image) 提供高效的图片缓存与加载支持。
 - 感谢 [Anime4K](https://github.com/bloc97/Anime4K) 与 [mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit) 两个优秀开源项目，为本软件提供了视频超分能力支持，使影视播放画质与体验得以大幅提升。
+
+## 交流
+
+获取最新开发进度、体验测试功能、反馈问题可加群：
+
+<img src="./document/afan.qq.png" width="300px" height="300px" />
