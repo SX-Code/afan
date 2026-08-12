@@ -129,4 +129,4 @@
 
 获取最新开发进度、体验测试功能、反馈问题可加群：
 
-<img src="./document/afan.qq.png" width="300px" height="300px" />
+<img src="./document/afan.qq.png" width="250px" height="250px" />
