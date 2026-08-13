@@ -97,6 +97,18 @@
 }
 ```
 
+注意：
+
+1、采集源无需携带任何参数，类似`?ac=list&t=xx`，保留干净的链接即可
+```bash
+https://xxx.collect.cpm/api.php/provide/vod/
+```
+2、采集源需要支持搜索功能，可以在采集接口追加`?ac=list&wd=王`进行测试：
+```bash
+https://xxx.collect.cpm/api.php/provide/vod/?ac=list&wd=王
+```
+
+
 ## 声明
 
 1、本项目仅为技术学习与交流使用，所有影视资源均收集自互联网公开渠道，非商用、非盈利。
