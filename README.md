@@ -11,7 +11,7 @@
 - MacOS
 - Windows
 - Linux
-- TV（待支持）
+- TV
 
 ## 屏幕截图
 
