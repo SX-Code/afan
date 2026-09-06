@@ -58,7 +58,7 @@
 - [✓] 投屏功能
 - [✓] 缓存功能
 - [✓] 切片播放源
-- [•] 嗅探播放源开发中，可进群体验
+- [✓] 嗅探播放源
 - [✗] 敬请期待
 
 ## 下载
@@ -67,7 +67,8 @@
 
 ## 播放源
 
-软件可自定义播放源，播放源为通用的资源采集站采集接口，要求其返回数据类型为JSON，格式如下：
+### 切片源
+软件可自定义切片源，播放源为通用的资源采集站采集接口，要求其返回数据类型为JSON，格式如下：
 ```json
 {
   "code": 1,
@@ -125,6 +126,36 @@ https://xxx.collect.cpm/api.php/provide/vod/
 2、采集源需要支持搜索功能，可以在采集接口追加`?ac=list&wd=王`进行测试：
 ```bash
 https://xxx.collect.cpm/api.php/provide/vod/?ac=list&wd=王
+```
+
+### 嗅探源
+
+软件可自定义嗅探源，通过执行 JavaScript 脚本从网页中获取资源播放链接：
+
+> 完整模版：[Sniff Template](./document/sniff-template.js)，可在软件采集源仓库中获取嗅探源脚本参考编写。
+
+```javascript
+/**
+ * 填充验证码
+ * @param {string} code 验证码
+ */
+async function fillCaptureCode(code) { }
+
+/**
+ * 嗅探资源
+ */
+async function sniffResource() { }
+
+/**
+ * 嗅探分集
+ */
+async function sniffEpisode() { }
+
+/**
+ * 嗅探播放链接
+ */
+async function sniffPlayUrl() { }
+
 ```
 
 
