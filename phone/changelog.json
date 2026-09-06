@@ -2,10 +2,10 @@
     "code": "00000",
     "msg": "success",
     "data": {
-        "version": "1.0.3",
-        "buildNumber": 4,
-        "updateInfo": "1.新增自定义采集源功能\n2.优化软件内存占用\n3.修复部分样式错误\n4.修复若干BUG",
-        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.3/afan-android-arm64-v8a-v1.0.3.apk",
+        "version": "1.0.4",
+        "buildNumber": 5,
+        "updateInfo": "1.适配平板布局\n2.增加嗅探源\n3.支持源调试\n4.优化布局\n5.修复BUG",
+        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.4/afan-android-arm64-v8a-v1.0.4.apk",
         "iosUrl": "https://github.com/sx-code/afan",
         "forceUpdate": true
     }
