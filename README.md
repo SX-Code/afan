@@ -180,6 +180,7 @@ async function sniffPlayUrl() { }
 ## 致谢
 
 - 感谢 [LongZhuTi](https://github.com/maoken-fonts/LongZhuTi) 为本项目提供默认字体。
+- 感谢 [WebView All](https://abandoft.github.io/webview_all/zh/) 为本项目提供嗅探基础。
 - 感谢 [Dart](https://dart.dev/) 与 [Flutter](https://flutter.dev/) 为本项目提供坚实的技术基石。
 - 感谢 [Dio](https://github.com/cfug/dio/blob/main/dio) 提供高效可靠的网络请求支持。
 - 感谢 [media-kit](https://github.com/media-kit/media-kit) 提供强大的视频播放能力。
