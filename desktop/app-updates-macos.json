@@ -1,14 +1,14 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 6,
   "appId": "com.swx.afan",
   "channel": "stable",
   "releases": [
     {
-      "version": "1.0.3",
-      "buildNumber": "4",
+      "version": "1.0.5",
+      "buildNumber": "6",
       "platform": "macos",
-      "releaseNotes": "1.新增自定义采集源功能\n2.优化软件内存占用\n3.修复部分样式错误\n4.修复若干BUG",
-      "releasedAt": "2026-08-09T10:00:00Z",
+      "releaseNotes": "1.新增采集源管理功能\n2.支持添加切片源和嗅探源\n3.修复部分BUG\n4.优化部分样式",
+      "releasedAt": "2026-09-12T19:46:00Z",
       "policy": {
         "level": "recommended",
         "minSupportedVersion": "1.0.2"
@@ -16,10 +16,10 @@
       "actions": [
         {
           "type": "openInstaller",
-          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.3/afan-macos-v1.0.3.dmg",
+          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.5/afan-macos-v1.0.5.dmg",
           "installerType": "dmg",
-          "installerSizeBytes": 43721636,
-          "sha256": "a81d5dcd796e385cccdb8a37323daf0cafada2a225c4a2f0e06068c5bd830d15"
+          "installerSizeBytes": 44284937,
+          "sha256": "455caeed841553c6338b72f93ae720cc63721736b6a602a3b7d2b6c78edeb69c"
         }
       ]
     }
