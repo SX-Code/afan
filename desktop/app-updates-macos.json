@@ -18,8 +18,8 @@
           "type": "openInstaller",
           "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.5/afan-macos-v1.0.5.dmg",
           "installerType": "dmg",
-          "installerSizeBytes": 44284937,
-          "sha256": "455caeed841553c6338b72f93ae720cc63721736b6a602a3b7d2b6c78edeb69c"
+          "installerSizeBytes": 44313777,
+          "sha256": "506c068489309c35f635a5b35ebaf376c4949f289132051acbfcf51e733a8d60"
         }
       ]
     }
