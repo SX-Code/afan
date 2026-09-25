@@ -191,5 +191,9 @@ async function sniffPlayUrl() { }
 ## 交流
 
 获取最新开发进度、体验测试功能、反馈问题可加群：
-
-<img src="./document/afan.qq.png" width="250px" height="250px" />
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+  <tr>
+    <td align='center'><img src="./document/afan.qq.png" width="250px" height="250px" /></td>
+    <td align='center'><img src="./document/afan.tg.png" width="250px" height="250px" /></td>
+  </tr>
+</table>
