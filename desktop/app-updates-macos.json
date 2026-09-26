@@ -4,11 +4,11 @@
   "channel": "stable",
   "releases": [
     {
-      "version": "1.0.5",
-      "buildNumber": "6",
+      "version": "1.0.6",
+      "buildNumber": "7",
       "platform": "macos",
-      "releaseNotes": "1.新增采集源管理功能\n2.支持添加切片源和嗅探源\n3.修复部分BUG\n4.优化部分样式",
-      "releasedAt": "2026-09-12T19:46:00Z",
+      "releaseNotes": "1.支持自定义番剧搜索名\n2.支持E站等本地切片文件播放\n3.修复嗅探源调试功能",
+      "releasedAt": "2026-09-26T12:52:00Z",
       "policy": {
         "level": "recommended",
         "minSupportedVersion": "1.0.2"
@@ -16,10 +16,10 @@
       "actions": [
         {
           "type": "openInstaller",
-          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.5/afan-macos-v1.0.5.dmg",
+          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.6/afan-macos-arm64-v1.0.6.dmg",
           "installerType": "dmg",
-          "installerSizeBytes": 44313777,
-          "sha256": "506c068489309c35f635a5b35ebaf376c4949f289132051acbfcf51e733a8d60"
+          "installerSizeBytes": 44420014,
+          "sha256": "e33a6c912dd27a310dbc2f105798a4ca9fe3dbf57cce17357a667f0dd99ffa7e"
         }
       ]
     }
