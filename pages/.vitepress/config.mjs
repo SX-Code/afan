@@ -5,7 +5,9 @@ export default defineConfig({
   base: '/',
   title: 'AFAN',
   description: 'AFAN 官网',
-
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico?v=1' }],
+  ],
   themeConfig: {
     logo: '/logo.svg',
     nav: [
