@@ -16,7 +16,7 @@
     rgba(233, 44, 77, 0.16) 55%,
     transparent 78%
   );
-  --vp-home-hero-image-filter: blur(68px);
+  --vp-home-hero-image-filter: blur(100px);
 }
 
 .dark {
@@ -37,7 +37,7 @@
     rgba(255, 77, 104, 0.18) 55%,
     transparent 78%
   );
-  --vp-home-hero-image-filter: blur(68px);
+  --vp-home-hero-image-filter: blur(100px);
 }
 
 /* 导航站点标题：AFAN 28px + 灰色句点 */

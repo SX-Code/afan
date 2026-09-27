@@ -6,7 +6,7 @@ title: 更新日志
 
 ## v1.0.6 <Badge type="tip" text="最新" /> · 2026-09-26
 
-按照 [issue #2](https://github.com/SX-Code/afan/issues/2) 的建议完善软件功能：
+按照 [issue #2](https://github.com/SX-Code/afan/issues/2) 的建议完善应用功能：
 
 - 支持搜索番剧名自定义
 - 支持 E 站等本地切片文件播放
@@ -37,7 +37,7 @@ title: 更新日志
 ## v1.0.3 · 2026-09-12
 
 - 新增自定义采集源功能
-- 优化软件内存占用
+- 优化应用内存占用
 - 修复部分样式错误
 - 修复若干 BUG
 

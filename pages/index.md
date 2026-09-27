@@ -8,7 +8,7 @@ hero:
     src: /logo.svg
     alt: AFAN logo
   text: 由 Flutter 驱动的跨平台番剧检索与采集应用
-  tagline: 免费、开源、跨平台
+  tagline: 简约、免费、跨平台
   actions:
     - theme: brand
       text: 立即下载
@@ -24,5 +24,5 @@ features:
   - title: 云端数据存储
     details: 追番进度与观看记录自动云端同步，多端无缝续看
   - title: 全平台支持
-    details: Windows / macOS / Linux / iOS / Android 界面统一、数据同步
+    details: Windows / macOS / Linux / iOS / Android / HarmonyOS / TV
 ---

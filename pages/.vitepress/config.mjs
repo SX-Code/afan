@@ -4,9 +4,21 @@ export default defineConfig({
   lang: 'zh-CN',
   base: '/',
   title: 'AFAN',
-  description: 'AFAN 官网',
+  description: 'AFAN 是一款使用 Flutter 开发，集成切片、嗅探等多种自定义播放源的追番应用。支持番剧搜索查找、追番提醒、视频超分等实用功能，界面简洁清爽，为番剧爱好者提供便捷的追番观影体验。',
+  titleTemplate: ":title | AFAN 官网",
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico?v=1' }],
+    // 搜索引擎meta
+    ['meta', { name: 'keywords', content: '追番,自定义规则' }],
+    ['meta', { name: 'author', content: 'SX-Code' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    // Open Graph（社交分享，微信/推特/Facebook预览图）
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'AFAN 官网' }],
+    ['meta', { property: 'og:image', content: '/og-preview.png' }],
+    ['meta', { property: 'og:url', content: 'https://afan.sxcode.vip' }],
+    //  canonical 规范链接，防止重复内容（重要）
+    ['link', { rel: 'canonical', href: 'https://afan.sxcode.vip' }],
   ],
   themeConfig: {
     logo: '/logo.svg',
@@ -49,6 +61,9 @@ export default defineConfig({
     footer: {
       message: '以 MIT 协议开源',
       copyright: '© 2026 SX-Code',
+    },
+    sitemap: {
+      hostname: 'https://afan.sxcode.vip',
     },
     // 右侧目录标题（对应 "On this page"）
     outline: { label: '本页目录' },

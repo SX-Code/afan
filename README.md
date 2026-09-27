@@ -68,7 +68,7 @@
 ## 播放源
 
 ### 切片源
-软件可自定义切片源，播放源为通用的资源采集站采集接口，要求其返回数据类型为JSON，格式如下：
+应用可自定义切片源，播放源为通用的资源采集站采集接口，要求其返回数据类型为JSON，格式如下：
 ```json
 {
   "code": 1,
@@ -130,9 +130,9 @@ https://xxx.collect.cpm/api.php/provide/vod/?ac=list&wd=王
 
 ### 嗅探源
 
-软件可自定义嗅探源，通过执行 JavaScript 脚本从网页中获取资源播放链接：
+应用可自定义嗅探源，通过执行 JavaScript 脚本从网页中获取资源播放链接：
 
-> 完整模版：[Sniff Template](./document/sniff-template.js)，可在软件采集源仓库中获取嗅探源脚本参考编写。
+> 完整模版：[Sniff Template](./document/sniff-template.js)，可在应用采集源仓库中获取嗅探源脚本参考编写。
 
 ```javascript
 /**
@@ -186,7 +186,7 @@ async function sniffPlayUrl() { }
 - 感谢 [media-kit](https://github.com/media-kit/media-kit) 提供强大的视频播放能力。
 - 感谢 [canvas_danmaku](https://github.com/Predidit/canvas_danmaku) 提供流畅的弹幕渲染支持。
 - 感谢 [cached_network_image](https://github.com/Baseflow/flutter_cached_network_image) 提供高效的图片缓存与加载支持。
-- 感谢 [Anime4K](https://github.com/bloc97/Anime4K) 与 [mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit) 两个优秀开源项目，为本软件提供了视频超分能力支持，使影视播放画质与体验得以大幅提升。
+- 感谢 [Anime4K](https://github.com/bloc97/Anime4K) 与 [mpv_PlayKit](https://github.com/hooke007/mpv_PlayKit) 两个优秀开源项目，为本应用提供了视频超分能力支持，使影视播放画质与体验得以大幅提升。
 
 ## 交流
 
