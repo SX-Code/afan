@@ -1,0 +1,61 @@
+:root {
+  --vp-c-brand-1: #e92c4d;
+  --vp-c-brand-2: #d42645;
+  --vp-c-brand-3: #b81f3b;
+  --vp-c-brand-soft: rgba(233, 44, 77, 0.08);
+  --vp-button-brand-bg: #f43f5e;
+  --vp-button-brand-border: #f43f5e;
+  --vp-button-brand-hover-bg: #e92c4d;
+  --vp-button-brand-hover-border: #e92c4d;
+  --vp-button-brand-active-bg: #d42645;
+  --vp-button-brand-active-border: #d42645;
+  --vp-home-hero-name-color: #e92c4d;
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle,
+    rgba(233, 44, 77, 0.42) 0%,
+    rgba(233, 44, 77, 0.16) 55%,
+    transparent 78%
+  );
+  --vp-home-hero-image-filter: blur(68px);
+}
+
+.dark {
+  --vp-c-brand-1: #ff4d68;
+  --vp-c-brand-2: #e92c4d;
+  --vp-c-brand-3: #d42645;
+  --vp-c-brand-soft: rgba(233, 44, 77, 0.12);
+  --vp-button-brand-bg: #ff4d68;
+  --vp-button-brand-border: #ff4d68;
+  --vp-button-brand-hover-bg: #f43f5e;
+  --vp-button-brand-hover-border: #f43f5e;
+  --vp-button-brand-active-bg: #e92c4d;
+  --vp-button-brand-active-border: #e92c4d;
+  --vp-home-hero-name-color: #ff4d68;
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle,
+    rgba(255, 77, 104, 0.45) 0%,
+    rgba(255, 77, 104, 0.18) 55%,
+    transparent 78%
+  );
+  --vp-home-hero-image-filter: blur(68px);
+}
+
+/* 导航站点标题：AFAN 28px + 灰色句点 */
+.VPNavBarTitle {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.VPNavBarTitle .title {
+  display: flex;
+  align-items: center;
+  font-size: 18px !important;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.VPNavBarTitle .title::after {
+  content: ".app";
+  color: var(--vp-c-text-3);
+  font-size: 18px;
+  flex-shrink: 0;
+}
