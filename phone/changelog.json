@@ -2,10 +2,10 @@
     "code": "00000",
     "msg": "success",
     "data": {
-        "version": "1.0.6",
-        "buildNumber": 7,
-        "updateInfo": "1.支持搜索番剧名自定义\n2.支持E站等本地切片文件播放\n3.收藏/追番增加三网格布局\n4.全屏播放增加弹幕开关\n5.优化平板模式布局",
-        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.6/afan-android-arm64-v8a-v1.0.6.apk",
+        "version": "1.0.7",
+        "buildNumber": 8,
+        "updateInfo": "1.软件不再维护默认采集源，转到社区仓库\n2.增加源预采集功能，可在换源时看到源采集结果\n3.修复自定义搜索名称时滑选和点选冲突问题\n4.更新后采集源被清空，需在添加源时选择“同步采集源”\n5.调整嗅探逻辑，提高嗅探成功率",
+        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.7/afan-android-arm64-v8a-v1.0.7.apk",
         "iosUrl": "https://github.com/sx-code/afan",
         "forceUpdate": true
     }
