@@ -3,8 +3,8 @@ import { withBase } from 'vitepress'
 import { ref, computed, onMounted } from "vue";
 
 // ===== 集中配置：发布新版本只需改 VERSION_TAG 和 releaseDate =====
-const MIRROR = "https://gh.beimengvv.xyz/";     // GitHub 加速代理前缀，想直连就留空 ""
-const VERSION_TAG = "v1.0.7";                   // 版本号，唯一需要手动改的版本值
+const MIRROR = "https://gh-proxy.org/";     // GitHub 加速代理前缀，想直连就留空 ""
+const VERSION_TAG = "v1.0.8";                   // 版本号，唯一需要手动改的版本值
 const REPO_URL = "https://github.com/SX-Code/afan";
 const dl = (file) => `${MIRROR}${REPO_URL}/releases/download/${VERSION_TAG}/${file}`;
 
@@ -14,7 +14,7 @@ const CONFIG = {
   repoOwner: "SX-Code",
   version: VERSION_TAG.replace(/^v/, ""),       // "1.0.6"（自动去掉 v 前缀）
   versionTag: VERSION_TAG,                      // "v1.0.6"
-  releaseDate: "2026-10-02",                    // 最新版本更新时间
+  releaseDate: "2026-10-05",                    // 最新版本更新时间
   repoUrl: REPO_URL,
   links: {
     windows: dl(`afan-windows-${VERSION_TAG}-installer.exe`),
@@ -22,7 +22,7 @@ const CONFIG = {
     linux: dl(`afan-linux-amd64-${VERSION_TAG}.deb`),
     ios: dl(`afan-ios-${VERSION_TAG}.ipa`),
     android: dl(`afan-android-arm64-v8a-${VERSION_TAG}.apk`),
-    harmony: dl(`afan-harmonyos-${VERSION_TAG}.hap`),
+    harmony: dl(`afan-harmonyos-${VERSION_TAG}.hap.zip`),
   },
   stores: {
     appStore: "#",

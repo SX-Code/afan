@@ -4,11 +4,11 @@
   "channel": "stable",
   "releases": [
     {
-      "version": "1.0.7",
-      "buildNumber": "8",
+      "version": "1.0.8",
+      "buildNumber": "9",
       "platform": "windows",
-      "releaseNotes": "1.软件不再维护默认采集源，转到社区仓库\n2.增加源预采集功能，可在换源时看到源采集结果\n3.修复自定义搜索名称时滑选和点选冲突问题\n4.更新后采集源被清空，需在添加源时选择“同步采集源”\n5.调整嗅探逻辑，提高嗅探成功率",
-      "releasedAt": "2026-10-02T23:25:00Z",
+      "releaseNotes": "1.增加公告弹窗\n2.增加源禁用功能",
+      "releasedAt": "2026-10-05T19:25:00Z",
       "policy": {
         "level": "recommended",
         "minSupportedVersion": "1.0.2"
@@ -16,10 +16,10 @@
       "actions": [
         {
           "type": "openInstaller",
-          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.7/afan-windows-v1.0.7-installer.exe",
+          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.8/afan-windows-v1.0.8-installer.exe",
           "installerType": "exe",
-          "installerSizeBytes": 39094846,
-          "sha256": "ca51d861183f74139a0ba279bf16d304ab28d2eabdb2d8e410ddf2d4ac72d65f"
+          "installerSizeBytes": 39104031,
+          "sha256": "bb6eb7bba22d50784ad222879208f30d9d32649087a8e3bb7192d85f0acbb9d8"
         }
       ]
     }
