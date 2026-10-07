@@ -1,27 +1,33 @@
 <script setup>
-import { withBase } from 'vitepress'
+import { withBase } from "vitepress";
 import { ref, computed, onMounted } from "vue";
 
 // ===== 集中配置：发布新版本只需改 VERSION_TAG 和 releaseDate =====
-const MIRROR = "https://gh-proxy.org/";     // GitHub 加速代理前缀，想直连就留空 ""
-const VERSION_TAG = "v1.0.8";                   // 版本号，唯一需要手动改的版本值
+const MIRROR = "https://gh-proxy.org/"; // GitHub 加速代理前缀，想直连就留空 ""
+const VERSION_TAG = "v1.0.8"; // 版本号，唯一需要手动改的版本值
 const REPO_URL = "https://github.com/SX-Code/afan";
-const dl = (file) => `${MIRROR}${REPO_URL}/releases/download/${VERSION_TAG}/${file}`;
+const dl = (file) =>
+  `${MIRROR}${REPO_URL}/releases/download/${VERSION_TAG}/${file}`;
 
 const CONFIG = {
-  appName: "AFAN",                              // APP 名称（页面展示用）
-  pkgName: "afan",                              // 命令行/URL 包名
+  appName: "AFAN",
+  pkgName: "afan",
   repoOwner: "SX-Code",
-  version: VERSION_TAG.replace(/^v/, ""),       // "1.0.6"（自动去掉 v 前缀）
-  versionTag: VERSION_TAG,                      // "v1.0.6"
-  releaseDate: "2026-10-05",                    // 最新版本更新时间
+  version: VERSION_TAG.replace(/^v/, ""),
+  versionTag: VERSION_TAG,
+  releaseDate: "2026-10-05",
   repoUrl: REPO_URL,
   links: {
     windows: dl(`afan-windows-${VERSION_TAG}-installer.exe`),
     macos: dl(`afan-macos-arm64-${VERSION_TAG}.dmg`),
     linux: dl(`afan-linux-amd64-${VERSION_TAG}.deb`),
     ios: dl(`afan-ios-${VERSION_TAG}.ipa`),
-    android: dl(`afan-android-arm64-v8a-${VERSION_TAG}.apk`),
+    // Android：对象结构，键名与 variants.key 一一对应
+    android: {
+      phone: dl(`afan-android-arm64-v8a-${VERSION_TAG}.apk`),
+      tv_arm64: dl(`afan-atv-arm64-v8a-${VERSION_TAG}.apk`),
+      tv_armeabi: dl(`afan-atv-armeabi-v7a-${VERSION_TAG}.apk`),
+    },
     harmony: dl(`afan-harmonyos-${VERSION_TAG}.hap.zip`),
   },
   stores: {
@@ -75,9 +81,32 @@ const PLATFORMS = [
     name: "Android",
     format: "APK",
     size: "约 56.8 MB",
-    desc: "提供手机版和TV版的 APK 直装包，均含 arm64、armeabi 架构 。",
-    btn: "下载 APK",
+    desc: "支持手机、平板与 Android TV，提供 arm64、armeabi等架构，点击后选择具体版本。",
+    btn: "下载 Android 版",
     icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.52 15.34a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-11.05 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm11.4-6.02 2-3.46a.42.42 0 0 0-.72-.42l-2.02 3.5A8.64 8.64 0 0 0 12 7.42a8.64 8.64 0 0 0-5.14 1.52L4.84 5.44a.42.42 0 0 0-.72.42l2 3.46C3.64 11.35 2.24 14.39 2.09 17.48h19.82c-.15-3.1-1.55-6.13-4.03-6.16zM12 22.13a8.77 8.77 0 0 1-7.32-4.17h14.64A8.77 8.77 0 0 1 12 22.13z"/></svg>',
+    variants: [
+      {
+        key: "phone",
+        name: "手机 / 平板",
+        format: "APK",
+        size: "约 56.8 MB",
+        desc: "arm64-v8a，适配绝大多数 Android 手机和平板。",
+      },
+      {
+        key: "tv_arm64",
+        name: "Android TV · arm64-v8a",
+        format: "APK",
+        size: "约 40.4 MB",
+        desc: "适配 64 位 Android TV / 电视盒子，性能更好。",
+      },
+      {
+        key: "tv_armeabi",
+        name: "Android TV · armeabi-v7a",
+        format: "APK",
+        size: "约 46.7 MB",
+        desc: "适配较老的 32 位电视盒子，兼容性更好。",
+      },
+    ],
   },
   {
     id: "harmony",
@@ -128,9 +157,40 @@ function go(url, fallback) {
   }
   show(fallback);
 }
+
+// 从 CONFIG.links 中安全取 url：字符串直接返回，对象按 variantKey 取子项
+function resolveUrl(platformId, variantKey) {
+  const entry = CONFIG.links[platformId];
+  if (!entry) return "";
+  if (typeof entry === "string") return entry;
+  return entry[variantKey] || "";
+}
+
+// 卡片主按钮：有 variants 就开弹窗，否则直接下载
+function onCardAction(p) {
+  if (p.variants && p.variants.length) {
+    variantDialog.value = { open: true, platform: p };
+    return;
+  }
+  onDownload(p);
+}
+
+function onDownload(p) {
+  go(
+    resolveUrl(p.id),
+    "演示页面：请为 " + p.name + " 配置真实下载链接（CONFIG.links）",
+  );
+}
+
 function onAutoDownload() {
   if (!detected.value) {
     show("未识别到系统，请在下方手动选择平台");
+    return;
+  }
+  const p = PLATFORMS.find((x) => x.id === detected.value);
+  if (!p) return;
+  if (p.variants && p.variants.length) {
+    variantDialog.value = { open: true, platform: p };
     return;
   }
   go(
@@ -140,20 +200,30 @@ function onAutoDownload() {
       " 配置真实下载链接（CONFIG.links）",
   );
 }
-function onDownload(p) {
-  go(
-    CONFIG.links[p.id],
-    "演示页面：请为 " + p.name + " 配置真实下载链接（CONFIG.links）",
-  );
-}
+
 function onStore(key, label) {
   go(
     CONFIG.stores[key],
     "演示页面：请配置 " + label + " 链接（CONFIG.stores）",
   );
 }
+
 function onRelease() {
   window.open(CONFIG.repoUrl + "/releases", "_blank");
+}
+
+// ===== 版本选择弹窗 =====
+const variantDialog = ref({ open: false, platform: null });
+
+function closeVariant() {
+  variantDialog.value = { open: false, platform: null };
+}
+
+function onVariantDownload(v) {
+  const p = variantDialog.value.platform;
+  const url = resolveUrl(p.id, v.key);
+  closeVariant();
+  go(url, "演示页面：请为 " + p.name + " / " + v.name + " 配置真实下载链接");
 }
 </script>
 
@@ -161,7 +231,7 @@ function onRelease() {
   <div class="dl-page">
     <!-- Hero -->
     <section class="dl-hero">
-      <span class="badge">{{ CONFIG.versionTag }} · 刚刚发布</span>
+      <span class="badge">{{ CONFIG.versionTag }} · 现已发布</span>
       <h1>
         下载 <em>{{ CONFIG.appName }}</em>
       </h1>
@@ -219,7 +289,7 @@ function onRelease() {
             </div>
           </div>
           <p class="card-desc">{{ p.desc }}</p>
-          <button class="btn" @click="onDownload(p)">{{ p.btn }}</button>
+          <button class="btn" @click="onCardAction(p)">{{ p.btn }}</button>
         </div>
       </div>
 
@@ -302,6 +372,75 @@ function onRelease() {
         </div>
       </div>
     </section>
+
+    <!-- 版本选择弹窗（Android 多架构） -->
+    <transition name="fade">
+      <div
+        v-if="variantDialog.open"
+        class="variant-mask"
+        @click.self="closeVariant"
+      >
+        <div class="variant-dialog">
+          <div class="variant-head">
+            <div class="variant-title">
+              <span
+                class="plat-icon"
+                v-html="variantDialog.platform?.icon"
+              ></span>
+              <div>
+                <h3>选择 {{ variantDialog.platform?.name }} 版本</h3>
+                <div class="ver">
+                  {{ CONFIG.versionTag }} ·
+                  {{ variantDialog.platform?.variants?.length || 0 }} 个可选版本
+                </div>
+              </div>
+            </div>
+            <button
+              class="variant-close"
+              @click="closeVariant"
+              aria-label="关闭"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="variant-list">
+            <button
+              v-for="v in variantDialog.platform?.variants || []"
+              :key="v.key"
+              class="variant-item"
+              @click="onVariantDownload(v)"
+            >
+              <div class="variant-item-main">
+                <div class="variant-item-head">
+                  <span class="variant-name">{{ v.name }}</span>
+                  <span class="variant-meta"
+                    >{{ v.format }} · {{ v.size }}</span
+                  >
+                </div>
+                <p class="variant-desc">{{ v.desc }}</p>
+              </div>
+              <span class="variant-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-4.7 1.4-1.4 3.3 3.3V3z"
+                  />
+                  <rect x="5" y="19" width="14" height="2" rx="1" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
 
     <transition name="fade">
       <div v-if="toast" class="toast">{{ toast }}</div>
@@ -657,6 +796,157 @@ function onRelease() {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* ===== 版本选择弹窗 ===== */
+.variant-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+.variant-dialog {
+  width: 100%;
+  max-width: 520px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--vp-c-shadow);
+  padding: 22px 22px 18px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.variant-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.variant-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.variant-title h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 0;
+}
+.variant-title .ver {
+  font-size: 12.5px;
+  color: var(--vp-c-text-3);
+  margin-top: 2px;
+}
+.variant-close {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--vp-c-text-3);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+.variant-close:hover {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-border);
+  color: var(--vp-c-text-1);
+}
+.variant-close svg {
+  width: 16px;
+  height: 16px;
+}
+.variant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.variant-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border: 1px solid var(--vp-c-border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  background: var(--vp-c-bg-soft);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.variant-item:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+  box-shadow: var(--vp-c-shadow);
+}
+.variant-item-main {
+  flex: 1;
+  min-width: 0;
+}
+.variant-item-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.variant-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+.variant-meta {
+  font-size: 12.5px;
+  color: var(--vp-c-text-3);
+  flex-shrink: 0;
+}
+.variant-desc {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  line-height: 1.55;
+  margin: 0;
+}
+.variant-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-border);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-brand-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+.variant-item:hover .variant-arrow {
+  background: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  color: #fff;
+}
+.variant-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -689,6 +979,18 @@ function onRelease() {
   .sep {
     width: 40px;
     height: 1px;
+  }
+  .variant-dialog {
+    padding: 18px 16px 14px;
+  }
+  .variant-item {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .variant-item-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
 }
 </style>

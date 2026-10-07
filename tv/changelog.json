@@ -1,12 +1,12 @@
 {
-    "code": "00000",
-    "msg": "success",
-    "data": {
-        "version": "1.0.6",
-        "buildNumber": 7,
-        "updateInfo": "1.支持搜索番剧名自定义\n2.支持E站等本地切片文件播放\n3.收藏/追番增加三网格布局\n4.全屏播放增加弹幕开关\n5.优化平板模式布局",
-        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.6/afan-atv-${structure}-v1.0.6.apk",
-        "iosUrl": "https://github.com/sx-code/afan",
-        "forceUpdate": true
-    }
+  "code": "00000",
+  "msg": "success",
+  "data": {
+    "version": "1.0.8",
+    "buildNumber": 9,
+    "updateInfo": "1.从社区采集源仓库加载源\n2.增加弹窗功能",
+    "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.8/afan-atv-armeabi-v7a-v1.0.8.apk",
+    "iosUrl": "https://github.com/sx-code/afan",
+    "forceUpdate": true
+  }
 }
