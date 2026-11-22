@@ -4,11 +4,11 @@
   "channel": "stable",
   "releases": [
     {
-      "version": "1.0.8",
-      "buildNumber": "9",
+      "version": "1.0.9",
+      "buildNumber": "10",
       "platform": "macos",
-      "releaseNotes": "1.增加公告弹窗\n2.增加源禁用功能",
-      "releasedAt": "2026-10-05T19:25:00Z",
+      "releaseNotes": "1.增加脚本源\n2.优化源加载速度\n3.增加BT源，磁力边播边上传\n4.全平台统一更新策略\n5.优化弹幕加载，弹幕切屏位置不丢失",
+      "releasedAt": "2026-11-22T18:31:00Z",
       "policy": {
         "level": "recommended",
         "minSupportedVersion": "1.0.2"
@@ -16,10 +16,10 @@
       "actions": [
         {
           "type": "openInstaller",
-          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.8/afan-macos-arm64-v1.0.8.dmg",
+          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.9/afan-macos-arm64-v1.0.9.dmg",
           "installerType": "dmg",
-          "installerSizeBytes": 44549885,
-          "sha256": "13f8e197fa69f11538515000dacf55c799ae26e6deaec62008c68761f10ce204"
+          "installerSizeBytes": 54148168,
+          "sha256": "164f886276085a21836a63ebf246cf0cd1784c05dcc00b245b56d763141f7f92"
         }
       ]
     }

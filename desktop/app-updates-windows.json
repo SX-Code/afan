@@ -4,11 +4,11 @@
   "channel": "stable",
   "releases": [
     {
-      "version": "1.0.8",
-      "buildNumber": "9",
+      "version": "1.0.9",
+      "buildNumber": "10",
       "platform": "windows",
-      "releaseNotes": "1.增加公告弹窗\n2.增加源禁用功能",
-      "releasedAt": "2026-10-05T19:25:00Z",
+      "releaseNotes": "1.增加脚本源\n2.优化源加载速度\n3.增加BT源，磁力边播边上传\n4.全平台统一更新策略\n5.优化弹幕加载，弹幕切屏位置不丢失",
+      "releasedAt": "2026-11-22T18:31:00Z",
       "policy": {
         "level": "recommended",
         "minSupportedVersion": "1.0.2"
@@ -16,10 +16,10 @@
       "actions": [
         {
           "type": "openInstaller",
-          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.8/afan-windows-v1.0.8-installer.exe",
+          "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.9/afan-windows-v1.0.9-installer.exe",
           "installerType": "exe",
-          "installerSizeBytes": 39104031,
-          "sha256": "bb6eb7bba22d50784ad222879208f30d9d32649087a8e3bb7192d85f0acbb9d8"
+          "installerSizeBytes": 37865817,
+          "sha256": "30ea0a5417330c974795079ee708ca3cb25fc0f9faefb39244d869baee0549b5"
         }
       ]
     }

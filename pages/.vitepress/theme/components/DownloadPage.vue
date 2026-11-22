@@ -4,7 +4,7 @@ import { ref, computed, onMounted } from "vue";
 
 // ===== 集中配置：发布新版本只需改 VERSION_TAG 和 releaseDate =====
 const MIRROR = "https://gh-proxy.org/"; // GitHub 加速代理前缀，想直连就留空 ""
-const VERSION_TAG = "v1.0.8"; // 版本号，唯一需要手动改的版本值
+const VERSION_TAG = "v1.0.9"; // 版本号，唯一需要手动改的版本值
 const REPO_URL = "https://github.com/SX-Code/afan";
 const dl = (file) =>
   `${MIRROR}${REPO_URL}/releases/download/${VERSION_TAG}/${file}`;
@@ -15,7 +15,7 @@ const CONFIG = {
   repoOwner: "SX-Code",
   version: VERSION_TAG.replace(/^v/, ""),
   versionTag: VERSION_TAG,
-  releaseDate: "2026-10-05",
+  releaseDate: "2026-11-22",
   repoUrl: REPO_URL,
   links: {
     windows: dl(`afan-windows-${VERSION_TAG}-installer.exe`),
@@ -44,7 +44,7 @@ const PLATFORMS = [
     id: "windows",
     name: "Windows",
     format: "exe",
-    size: "约 37.28 MB",
+    size: "约 36.1 MB",
     desc: "Windows 10/11 64 位。安装包经代码签名，支持静默安装。",
     btn: "下载 Windows 版",
     icon: '<svg viewBox="0 0 576 512" fill="currentColor"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>',
@@ -53,7 +53,7 @@ const PLATFORMS = [
     id: "macos",
     name: "macOS",
     format: "dmg",
-    size: "约 42.5 MB",
+    size: "约 51.6 MB",
     desc: "macOS 12+，适用于 Apple Silicon 安装包。首次打开请在系统设置中允许。",
     btn: "下载 macOS 版",
     icon: '<svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>',
@@ -62,7 +62,7 @@ const PLATFORMS = [
     id: "linux",
     name: "Linux",
     format: "AppImage",
-    size: "约 42.4 MB",
+    size: "约 24.9 MB",
     desc: "提供 deb 安装包，目前仅支持 amd64 架构。",
     btn: "下载 Linux 版",
     icon: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M6.5 9l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12.5" cy="15" r="0.9"/><path d="M16 15.2h2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
@@ -80,7 +80,7 @@ const PLATFORMS = [
     id: "android",
     name: "Android",
     format: "APK",
-    size: "约 56.8 MB",
+    size: "约 71.21 MB",
     desc: "支持手机、平板与 Android TV，提供 arm64、armeabi等架构，点击后选择具体版本。",
     btn: "下载 Android 版",
     icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.52 15.34a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-11.05 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm11.4-6.02 2-3.46a.42.42 0 0 0-.72-.42l-2.02 3.5A8.64 8.64 0 0 0 12 7.42a8.64 8.64 0 0 0-5.14 1.52L4.84 5.44a.42.42 0 0 0-.72.42l2 3.46C3.64 11.35 2.24 14.39 2.09 17.48h19.82c-.15-3.1-1.55-6.13-4.03-6.16zM12 22.13a8.77 8.77 0 0 1-7.32-4.17h14.64A8.77 8.77 0 0 1 12 22.13z"/></svg>',
@@ -89,7 +89,7 @@ const PLATFORMS = [
         key: "phone",
         name: "手机 / 平板",
         format: "APK",
-        size: "约 56.8 MB",
+        size: "约 71.21 MB",
         desc: "arm64-v8a，适配绝大多数 Android 手机和平板。",
       },
       {
@@ -112,7 +112,7 @@ const PLATFORMS = [
     id: "harmony",
     name: "HarmonyOS",
     format: "HAP",
-    size: "约 72.3 MB",
+    size: "约 77.16 MB",
     desc: "HAP 为未签名安装包，需要自签或侧载。建议先阅读安装指南。",
     btn: "下载 HAP",
     icon: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',

@@ -2,10 +2,10 @@
     "code": "00000",
     "msg": "success",
     "data": {
-        "version": "1.0.8",
-        "buildNumber": 9,
-        "updateInfo": "1.新增公告弹窗功能\n2.修复社区源仓库无法打开问题",
-        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.8/afan-android-arm64-v8a-v1.0.8.apk",
+        "version": "1.0.9",
+        "buildNumber": 10,
+        "updateInfo": "1.增加脚本源\n2.优化源加载速度\n3.增加BT源，磁力边播边上传\n4.全平台统一更新策略\n5.优化弹幕加载，弹幕切屏位置不丢失",
+        "androidUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.9/afan-android-arm64-v8a-v1.0.9.apk",
         "iosUrl": "https://afan.sxcode.vip",
         "forceUpdate": true
     }
