@@ -18,8 +18,8 @@
           "type": "openInstaller",
           "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.9/afan-windows-v1.0.9-installer.exe",
           "installerType": "exe",
-          "installerSizeBytes": 44057681,
-          "sha256": "c7126d8d69fe8b5878de3a34c98e9dbd3659daae24662866d9d1f775f738d1ad"
+          "installerSizeBytes": 44057765,
+          "sha256": "230e380bf78302d721d3660aee2db5b381d143bebb1585fe56d78c151473d2b8"
         }
       ]
     }

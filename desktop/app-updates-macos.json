@@ -18,8 +18,8 @@
           "type": "openInstaller",
           "installerUrl": "https://gitee.com/SX-Code/afan/releases/download/v1.0.9/afan-macos-arm64-v1.0.9.dmg",
           "installerType": "dmg",
-          "installerSizeBytes": 54148168,
-          "sha256": "164f886276085a21836a63ebf246cf0cd1784c05dcc00b245b56d763141f7f92"
+          "installerSizeBytes": 54816649,
+          "sha256": "299814268ed415c8d9dbca1f4d57713189b7d2865311940df749e2f5907cd0c9"
         }
       ]
     }
